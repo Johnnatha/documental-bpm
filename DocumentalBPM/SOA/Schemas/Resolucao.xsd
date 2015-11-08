@@ -1,0 +1,22 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema targetNamespace="http://www.celesc.com.br/ns/ebo/resolucao" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:re="http://www.celesc.com.br/ns/ebo/resolucao" elementFormDefault="qualified">
+    <xsd:annotation>
+        <xsd:documentation>Resolucao Ebo</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="EmitirResolucaoRequest" type="re:EmitirResolucaoRequest"/>
+    <xsd:complexType name="EmitirResolucaoRequest">
+        <xsd:sequence>
+            <xsd:element name="dataSolicitacao" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="dataUltimaAlteracao" type="xsd:date" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="diretoria" type="xsd:string" minOccurs="0"  maxOccurs="1"/>
+            <xsd:element name="empresa" type="xsd:string" minOccurs="0"  maxOccurs="1"/>
+            <xsd:element name="requisitante" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="resolucao" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="identificacaoResolucao" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="nomeChefe" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="tituloChefe" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="textoDiretoriaChefe" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/AprovarResolucaoUK.task</file>
+      <name>HumanTasks/AprovarResolucaoUK.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/EmitirResolucaoUK.task</file>
+      <name>HumanTasks/EmitirResolucaoUK.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ImprimirResolucaoUK.task</file>
+      <name>HumanTasks/ImprimirResolucaoUK.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+</Faults>

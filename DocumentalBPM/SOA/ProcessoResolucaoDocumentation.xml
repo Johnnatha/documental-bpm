@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="ProcessoResolucao">
+      <topicDocumentations>
+         <topicDocumentation name="ProcessoResolucao"/>
+         <topicDocumentation name="ACT14525905045640">
+            <labels>
+               <label locale="en">Emitir Resolução</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT14525906093459">
+            <labels>
+               <label locale="en">Aprovar Resolução</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT14525906891236">
+            <labels>
+               <label locale="en">Imprimir Resolução</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT14525893576934">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT14525893576969">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="GTW14525910398112">
+            <labels>
+               <label locale="en">Se Resolução Aprovada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf14525893577053"/>
+         <topicDocumentation name="sf14525911631321">
+            <labels>
+               <label locale="en">Resolução Aprovada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf14525911892748">
+            <labels>
+               <label locale="en">Resolução Rejeitada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf14525912470734"/>
+         <topicDocumentation name="sf14525912827134"/>
+         <topicDocumentation name="sf14525923273932"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

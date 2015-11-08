@@ -1,0 +1,22 @@
+2015-11-07 15:29:02.543/4.341 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/u02/app/oracle/product/12.2.1.0.0/fmw/home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2015-11-07 15:29:02.682/4.479 Oracle Coherence 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/u02/app/oracle/product/12.2.1.0.0/fmw/home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2015-11-07 15:29:02.685/4.483 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2015-11-07 15:29:02.692/4.489 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2015-11-07 15:29:02.694/4.492 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2015-11-07 15:29:02.697/4.494 Oracle Coherence 12.2.1.0.0 <D5> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+
+Oracle Coherence Version 12.2.1.0.0 Build 60603
+ Grid Edition: Development mode
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+2015-11-07 15:29:02.938/4.736 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Loaded FMW commons version: 12.2.1-0-0-SNAPSHOT b60603
+2015-11-07 15:29:02.948/4.745 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.DefaultConfigurableCacheFactory
+2015-11-07 15:29:04.218/6.016 Oracle Coherence GE 12.2.1.0.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "Johnnatha's cluster" has been automatically generated
+nov 07, 2015 3:29:04 PM oracle.dms.instrument.Noun findOrCreateByPath
+ADVERTÊNCIA: Tentativa de criar um nome /DMS-Internal preexistente, do tipo n/a, com um tipo de conflito n/d.
+nov 07, 2015 3:29:14 PM oracle.soa.scac.ValidateComposite loadWSDLs
+ADVERTÊNCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
+nov 07, 2015 3:29:14 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+INFORMAÇÕES: XMLSchema incremental build enabled.
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option PermSize=32m; support was removed in 8.0
+Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0

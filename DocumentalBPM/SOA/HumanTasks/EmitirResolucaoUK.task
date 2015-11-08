@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<taskDefinition targetNamespace="http://xmlns.oracle.com/CelescBPM/DocumentalBPM/EmitirResolucaoUK" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions"
+                xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction"
+                xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
+                xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+                xmlns:ns0="http://www.celesc.com.br/ns/ebo/resolucao"
+                xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator"
+                xmlns:ns1="http://xmlns.oracle.com/bpel/workflow/common"
+                xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue"
+                xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+                xmlns:oraxsl="http://www.oracle.com/XSL/Transform/java"
+                xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk"
+                xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
+                xmlns:med="http://schemas.oracle.com/mediator/xpath" xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+                xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService"
+                xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+   <name>EmitirResolucaoUK</name>
+   <id>${domain_id}_${process_id}_${process_revision}_EmitirResolucaoUK</id>
+   <title type="STATIC"><value>Emitir Resolução</value></title>
+   <priority>3</priority>
+   <hideCreator>false</hideCreator>
+   <process processId="" processVersion=""/>
+   <routingSlip xmlns="http://xmlns.oracle.com/bpel/workflow/routingSlip" routingType="TEMPLATE">
+      <globalConfiguration><applicationContext>OracleBPMProcessRolesApp</applicationContext>
+         <taskOwner type="STATIC" identityType="application_role">DocumentalBPM.ProcessOwner</taskOwner>
+         <sharePayloadConfiguration>
+            <type>USE_SYSTEM_WIDE_GLOBAL_CONFIGURATION</type>
+         </sharePayloadConfiguration>
+         <errorOnEmptyAssignee>false</errorOnEmptyAssignee>
+      </globalConfiguration>
+      <participants isAdhocRoutingSupported="false">
+         <stage name="Stage1" disabled="false">
+            <participant disabled="false" name="default.DefaultPerformer">
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:requisitante</resource>
+            </participant>
+         </stage>
+      </participants>
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false"
+                    oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false">
+         <action name="ASSIGN" recipient="ASSIGNEES">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="COMPLETE" recipient="CREATOR">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="ERROR" recipient="OWNER">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
+         <commentScope>TASK</commentScope>
+      </notification>
+   </routingSlip>
+   <workflowConfiguration features="ucm,RSCUSTOMIZATION" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
+                          xmlns:ns0="http://www.celesc.com.br/ns/ebo/resolucao">
+      <outcomes>
+         <outcome>YES</outcome>
+      </outcomes>
+      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/EmitirResolucaoUKPayload.xsd"
+               typedTaskSchemaLocation="../Schemas/EmitirResolucaoUKWorkflowTask.xsd">
+         <messageAttribute name="EmitirResolucaoRequest" attributeType="ELEMENT" type="ns0:EmitirResolucaoRequest"
+                           updatable="true" external="false"/>
+      </payload>
+      <summaryFields>
+         <standardFields>
+            <standardField updatable="true">
+               <name>PRIORITY</name>
+            </standardField>
+         </standardFields>
+         <payloadFields>
+            <payloadField updatable="false">
+               <name>instanceId</name>
+               <xpath>/task:task/task:processInfo/task:instanceId</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>dataSolicitacao</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:dataSolicitacao</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>dataUltimaAlteracao</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:dataUltimaAlteracao</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>diretoria</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:diretoria</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>empresa</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:empresa</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>requisitante</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:requisitante</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>resolucao</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:resolucao</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>identificacaoResolucao</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:identificacaoResolucao</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>nomeChefe</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:nomeChefe</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>tituloChefe</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:tituloChefe</xpath>
+            </payloadField>
+            <payloadField updatable="true">
+               <name>textoDiretoriaChefe</name>
+               <xpath>/task:task/task:payload/ns0:EmitirResolucaoRequest/ns0:textoDiretoriaChefe</xpath>
+            </payloadField>
+            <payloadField updatable="false">
+               <name>taskFormUI</name>
+               <xpath>'humanTask.emitirResolucao'</xpath>
+            </payloadField>
+         </payloadFields>
+      </summaryFields>
+      <bpelEventListener>false</bpelEventListener>
+      <bpelNoCallbacks>false</bpelNoCallbacks>
+      <showCompleteGraphicalHistory>true</showCompleteGraphicalHistory>
+      <reevalTranslatablesOnUpdate>false</reevalTranslatablesOnUpdate>
+      <preActionMandatoryUserSteps/>
+      <allowInitiatorEditParticipants>false</allowInitiatorEditParticipants>
+      <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
+      <globalCreationTask>false</globalCreationTask>
+      <enableAutoClaim>true</enableAutoClaim>
+      <workflowConditions/>
+      <taskSequenceTypes>FUTURE</taskSequenceTypes>
+      <taskSequenceTypes>AGGREGATE</taskSequenceTypes>
+   </workflowConfiguration>
+</taskDefinition>
